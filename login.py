@@ -19,7 +19,7 @@ def login():
         if(password == cPw):
             messagebox.showinfo(message='Login Successfull')
             root.destroy()
-            homePage.Homepage()
+            homePage.HomePage()
         else:
             messagebox.showinfo(message='Wrong Password')
             

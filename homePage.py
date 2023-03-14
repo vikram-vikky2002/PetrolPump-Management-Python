@@ -1,14 +1,16 @@
 from tkinter import Label
 from customtkinter import *
 from PIL import ImageTk
-import fill
+import fill, checkPrice
 
 set_appearance_mode('system')
 set_default_color_theme('green')
 
-def fillRedirect(hWin):
-    hWin.destroy()
+def fillRedirect():
     fill.fill_Petrol()
+    
+def priceCheck():
+    checkPrice.CheckPrice()
     
 def HomePage():
     hWin = CTk()
@@ -31,13 +33,10 @@ def HomePage():
     label = CTkLabel(master=frame, text='User Menu', font=('Impact', 28))
     label.pack(pady=25, padx=70)
 
-    filling = CTkButton(master=frame, text='Fill Fuel', font=('Arial Rounded MT Bold', 18), width=162, height=30, command=fillRedirect(hWin))
+    filling = CTkButton(master=frame, text='Fill Fuel', font=('Arial Rounded MT Bold', 18), width=162, height=30, command=fillRedirect)
     filling.pack(pady=6, padx=10)
 
-    checkPrice = CTkButton(master=frame, text='Check Price', font=('Arial Rounded MT Bold', 18), width=162, height=30, command=print('Check Price'))
-    checkPrice.pack(pady=6, padx=10)
-
-    checkPrice = CTkButton(master=frame, text='Customer Details', font=('Arial Rounded MT Bold', 18), height=30, command=print('Customer Details'))
+    checkPrice = CTkButton(master=frame, text='Check Price', font=('Arial Rounded MT Bold', 18), width=162, height=30, command=priceCheck)
     checkPrice.pack(pady=6, padx=10)
 
     label = CTkLabel(master=frame, text='', font=('Impact', 26))
@@ -45,3 +44,4 @@ def HomePage():
 
 
     hWin.mainloop()
+

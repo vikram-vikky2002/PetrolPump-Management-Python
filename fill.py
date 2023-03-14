@@ -14,23 +14,23 @@ def fill_Petrol():
     # else:
     #     print('Fuel Not there...')
     
-    root = CTk()
-    root.resizable(width= False, height= False)
+    fillWindow = CTkToplevel()
+    fillWindow.resizable(width= False, height= False)
     WW = 732
     WH = 488
-    SW = root.winfo_screenwidth()
-    SH = root.winfo_screenheight()
-    x = SW/2 - WW/2
+    SW = fillWindow.winfo_screenwidth()
+    SH = fillWindow.winfo_screenheight()
+    x = SW/2 + 200
     y = SH/2 - WH/2
-    root.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
-    # root.geometry('732x488+470+150')
+    fillWindow.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
+    # fillWindow.geometry('732x488+470+150')
 
     bg = ImageTk.PhotoImage(file='assets/background.jpg')
-    label1 = Label(root, image = bg)
+    label1 = Label(fillWindow, image = bg)
     label1.place(x = 0, y = 0)
 
-    frame = CTkFrame(master = root, height=200, width=6000)
+    frame = CTkFrame(master = fillWindow, height=200, width=6000)
     frame.pack(pady=60, padx=60, expand=True)
     
-    root.mainloop()
-    
+    fillWindow.mainloop()
+
