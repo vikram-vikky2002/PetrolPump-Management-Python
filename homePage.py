@@ -6,43 +6,42 @@ import fill
 set_appearance_mode('system')
 set_default_color_theme('green')
 
-def fillRedirect():
+def fillRedirect(hWin):
     hWin.destroy()
     fill.fill_Petrol()
     
-    
-    
-hWin = CTk()
-hWin.resizable(width= False, height= False)
-WW = 732
-WH = 488
-SW = hWin.winfo_screenwidth()
-SH = hWin.winfo_screenheight()
-x = SW/2 - WW/2
-y = SH/2 - WH/2
-hWin.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
+def HomePage():
+    hWin = CTk()
+    hWin.resizable(width= False, height= False)
+    WW = 732
+    WH = 488
+    SW = hWin.winfo_screenwidth()
+    SH = hWin.winfo_screenheight()
+    x = SW/2 - WW/2
+    y = SH/2 - WH/2
+    hWin.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
 
-bg = ImageTk.PhotoImage(file='assets/background.jpg')
-label1 = Label(hWin, image = bg)
-label1.place(x = 0, y = 0)
+    bg = ImageTk.PhotoImage(file='assets/background.jpg')
+    label1 = Label(hWin, image = bg)
+    label1.place(x = 0, y = 0)
 
-frame = CTkFrame(master = hWin)
-frame.pack(pady=60, padx=60, expand=True)
+    frame = CTkFrame(master = hWin)
+    frame.pack(pady=60, padx=60, expand=True)
 
-label = CTkLabel(master=frame, text='User Menu', font=('Impact', 28))
-label.pack(pady=25, padx=70)
+    label = CTkLabel(master=frame, text='User Menu', font=('Impact', 28))
+    label.pack(pady=25, padx=70)
 
-filling = CTkButton(master=frame, text='Fill Fuel', font=('Arial Rounded MT Bold', 18), width=162, height=30, command=fillRedirect)
-filling.pack(pady=6, padx=10)
+    filling = CTkButton(master=frame, text='Fill Fuel', font=('Arial Rounded MT Bold', 18), width=162, height=30, command=fillRedirect(hWin))
+    filling.pack(pady=6, padx=10)
 
-checkPrice = CTkButton(master=frame, text='Check Price', font=('Arial Rounded MT Bold', 18), width=162, height=30, command=print('Check Price'))
-checkPrice.pack(pady=6, padx=10)
+    checkPrice = CTkButton(master=frame, text='Check Price', font=('Arial Rounded MT Bold', 18), width=162, height=30, command=print('Check Price'))
+    checkPrice.pack(pady=6, padx=10)
 
-checkPrice = CTkButton(master=frame, text='Customer Details', font=('Arial Rounded MT Bold', 18), height=30, command=print('Customer Details'))
-checkPrice.pack(pady=6, padx=10)
+    checkPrice = CTkButton(master=frame, text='Customer Details', font=('Arial Rounded MT Bold', 18), height=30, command=print('Customer Details'))
+    checkPrice.pack(pady=6, padx=10)
 
-label = CTkLabel(master=frame, text='', font=('Impact', 26))
-label.pack(pady=2, padx=40)
+    label = CTkLabel(master=frame, text='', font=('Impact', 26))
+    label.pack(pady=2, padx=40)
 
 
-hWin.mainloop()
+    hWin.mainloop()

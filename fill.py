@@ -34,4 +34,3 @@ def fill_Petrol():
     
     root.mainloop()
     
-fill_Petrol()
