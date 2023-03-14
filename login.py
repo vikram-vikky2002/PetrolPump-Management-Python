@@ -35,7 +35,6 @@ def login():
         messagebox.showinfo(message='Username Not Found')
         
 
-
 root = CTk()
 root.resizable(width= False, height= False)
 WW = 732
@@ -50,7 +49,6 @@ root.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
 bg = ImageTk.PhotoImage(file='assets/background.jpg')
 label1 = Label(root, image = bg)
 label1.place(x = 0, y = 0)
-
 
 frame = CTkFrame(master = root, height=200, width=6000)
 frame.pack(pady=60, padx=60, expand=True)
