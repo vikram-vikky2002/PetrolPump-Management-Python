@@ -6,14 +6,16 @@ import fill, checkPrice
 set_appearance_mode('system')
 set_default_color_theme('green')
 
-def fillRedirect():
-    fill.fill_Petrol()
+def fillRedirect(hWin):
+    hWin.destroy()
+    fill.fillPage()
     
-def priceCheck():
+def priceCheck(hWin):
+    hWin.destroy()
     checkPrice.CheckPrice()
     
 def HomePage():
-    hWin = CTk()
+    hWin = CTkToplevel()
     hWin.resizable(width= False, height= False)
     WW = 732
     WH = 488
@@ -33,7 +35,7 @@ def HomePage():
     label = CTkLabel(master=frame, text='User Menu', font=('Impact', 28))
     label.pack(pady=25, padx=70)
 
-    filling = CTkButton(master=frame, text='Fill Fuel', font=('Arial Rounded MT Bold', 18), width=162, height=30, command=fillRedirect)
+    filling = CTkButton(master=frame, text='Fill Fuel', font=('Arial Rounded MT Bold', 18), width=162, height=30, command=lambda : fillRedirect(hWin))
     filling.pack(pady=6, padx=10)
 
     checkPrice = CTkButton(master=frame, text='Check Price', font=('Arial Rounded MT Bold', 18), width=162, height=30, command=priceCheck)
@@ -44,4 +46,3 @@ def HomePage():
 
 
     hWin.mainloop()
-
