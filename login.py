@@ -2,7 +2,7 @@ from customtkinter import *
 from tkinter import Label, messagebox
 from tkinter import *
 from PIL import ImageTk
-import homePage
+import homePage, adminPage
 
 set_appearance_mode('system')
 set_default_color_theme('green')
@@ -27,7 +27,7 @@ def login():
         if(password == adPw):
             messagebox.showinfo(message='Admin Login Successfull')
             root.destroy()
-            homePage.Homepage()
+            adminPage.admin()
         else:
             messagebox.showinfo(message='Wrong Admin Password')
     
