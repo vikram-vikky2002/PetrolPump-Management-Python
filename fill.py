@@ -11,15 +11,7 @@ def petrol(fillWindow):
     fillPetrol.PetrolPage()
 
 def fillPage():
-    # availPetrol = dataHandling.getData('petrolQty.pkl')
-    # print(availPetrol)
-    # if(availPetrol >= qty):
-    #     print('Filling...')
-    #     avPetrol = avPetrol - qty
-    #     price = qty*rate
-    # else:
-    #     print('Fuel Not there...')
-    
+
     fillWindow = CTkToplevel()
     fillWindow.resizable(width= False, height= False)
     WW = 732
@@ -29,7 +21,7 @@ def fillPage():
     x = SW/2 + 200
     y = SH/2 - WH/2
     fillWindow.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
-    # fillWindow.geometry('732x488+470+150')
+
 
     bg = ImageTk.PhotoImage(file='assets/background.jpg')
     label1 = Label(fillWindow, image = bg)

@@ -44,5 +44,4 @@ def HomePage():
     label = CTkLabel(master=frame, text='', font=('Impact', 26))
     label.pack(pady=2, padx=40)
 
-
     hWin.mainloop()

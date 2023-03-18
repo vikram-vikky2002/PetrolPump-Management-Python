@@ -17,17 +17,18 @@ def fillLitreFunction(entry1, petrolWindow):
     rate = dataHandling.getData(r'data\petrolPrice.pkl')
     inputVal = int(entry1.get())
     qty = int(inputVal)
+    maxLimit = dataHandling.getData(r'data\petrolMax.pkl')
     
-    if(availPetrol >= qty):
+    if((availPetrol+qty) <= maxLimit):
         messagebox.showinfo(message='Filling...')
-        availPetrol = availPetrol - qty
+        availPetrol = availPetrol + qty
         price = qty*rate
         messagebox.showinfo(message=f'Pay : Rs.{price}\nQuantity Filled : {qty}Ltrs.')
         dataHandling.storeData(r'data\petrolQty.pkl', availPetrol)
         goBack(petrolWindow)
         
     else:
-        messagebox.showinfo(message='Fuel Not there...')
+        messagebox.showinfo(message='Fuel Capacity Overflow...')
         goBack(petrolWindow)
 
 
