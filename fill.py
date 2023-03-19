@@ -2,14 +2,18 @@ from tkinter import Label
 from customtkinter import *
 from PIL import ImageTk
 import dataHandling
-import fillPetrol
+import fillPetrol, fillDiesel
 set_appearance_mode('system')
 set_default_color_theme('green')
 
 def petrol(fillWindow):
     fillWindow.destroy()
     fillPetrol.PetrolPage()
-
+    
+def diesel(fillWindow):
+    fillWindow.destroy()
+    fillDiesel.dieselPage()
+    
 def fillPage():
 
     fillWindow = CTkToplevel()
@@ -36,7 +40,7 @@ def fillPage():
     Petrol = CTkButton(master=frame, text='Petrol', font=('Arial Rounded MT Bold', 18), width=162, height=30, command= lambda: petrol(fillWindow))
     Petrol.pack(pady=20, padx=30, side= LEFT)
 
-    diesel = CTkButton(master=frame, text='Diesel', font=('Arial Rounded MT Bold', 18), width=162, height=30)
+    diesel = CTkButton(master=frame, text='Diesel', font=('Arial Rounded MT Bold', 18), width=162, height=30, command= lambda: petrol(fillWindow))
     diesel.pack(pady=20, padx=30, side= RIGHT)
     
     fillWindow.mainloop()

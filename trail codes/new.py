@@ -1,0 +1,12 @@
+import tkinter as tk 
+root = tk.Tk()
+root.image = tk.PhotoImage(file=r'assets\0001.gif')
+label = tk.Label(root, image=root.image, bg='white')
+root.overrideredirect(True)
+root.geometry("+250+250")
+root.lift()
+root.wm_attributes("-topmost", True)
+root.wm_attributes("-disabled", True)
+root.wm_attributes("-transparentcolor", "white")
+label.pack()
+label.mainloop()

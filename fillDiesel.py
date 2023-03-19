@@ -72,6 +72,3 @@ def dieselPage():
     filling.pack(pady=15, padx=30)
 
     dieselWindow.mainloop()
-
-
-dieselPage()

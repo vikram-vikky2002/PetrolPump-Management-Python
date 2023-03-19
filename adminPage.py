@@ -9,6 +9,10 @@ set_default_color_theme('green')
 def updateQty(adminWindow):
     adminWindow.destroy()
     fill.fillPage()
+    
+def updatePrice(adminWindow):
+    adminWindow.destroy()
+    
 
 def admin():
     adminWindow = CTkToplevel()

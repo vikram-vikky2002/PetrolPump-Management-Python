@@ -10,5 +10,6 @@ def getData(filename):
     with open(filename, 'rb') as file:
         val = pk.load(file)
         print('Getting Values...')
+        print(val)
         return val
 
