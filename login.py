@@ -7,6 +7,7 @@ import homePage, adminPage
 
 set_appearance_mode('system')
 set_default_color_theme('green')
+
 cUn = 'vikram'
 cPw = '12345'
 adUn = 'Admin'

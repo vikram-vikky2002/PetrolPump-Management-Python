@@ -10,9 +10,11 @@ def updateQty(adminWindow):
     adminWindow.destroy()
     fill.fillPage()
     
+
 def updatePrice(adminWindow):
     adminWindow.destroy()
-    
+    fill.fillPage()
+
 
 def admin():
     adminWindow = CTkToplevel()
