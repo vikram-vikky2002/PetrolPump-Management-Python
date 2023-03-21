@@ -1,21 +1,25 @@
-from tkinter import Label
+from tkinter import Label, messagebox
 from customtkinter import *
 from PIL import ImageTk
-import dataHandling
+import dataHandling, adminPage
 
 set_appearance_mode('system')
 set_default_color_theme('green')
 
-def updatePrice(entry1, entry2):
-    e1 = entry1.get()
-    e2 = entry2.get()
-    if(e1!=''):
+def updatePrice(entry1, entry2, costWindow):
+    if(entry1.get() or entry2.get()):
+        e1 = float(entry1.get())
         dataHandling.storeData(r'data\petrolPrice.pkl', e1)
-    if(e2!=''):
+        messagebox.showinfo(message='Petrol Price Updated')
+        
+    if(entry2.get()):
+        e2 = float(entry2.get())
         dataHandling.storeData(r'data\dieselPrice.pkl', e2)
-    
-    print(e1, e2)
-    
+        messagebox.showinfo(message='Diesel Price Updated')
+        
+    costWindow.destroy()
+    adminPage.admin()
+
 
 def updateRate():
     costWindow = CTkToplevel()
@@ -52,6 +56,7 @@ def updateRate():
     
     label4 = CTkLabel(master=frame, text=f'Enter New Petrol Rate', font=('Arial Rounded MT Bold', 15), width=100, height=30)
     label4.place(x=20, y=160)
+    
     entry1 = CTkEntry(master=frame, placeholder_text='Update Petrol Price')
     entry1.place(x=216, y=160)
 
@@ -60,9 +65,7 @@ def updateRate():
     entry2 = CTkEntry(master=frame, placeholder_text='Update Diesel Price')
     entry2.place(x=216, y=200)
     
-    button = CTkButton(master=frame, text='Update Price', command= lambda: updatePrice(entry1, entry2))
+    button = CTkButton(master=frame, text='Update Price', command= lambda: updatePrice(entry1, entry2, costWindow))
     button.pack(pady=25, padx=10)
     
     costWindow.mainloop()
-    
-updateRate()
