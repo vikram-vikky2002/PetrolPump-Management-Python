@@ -2,9 +2,23 @@ from customtkinter import *
 from tkinter import Label, messagebox, ttk
 from tkinter import *
 from PIL import ImageTk
+import uuid
 
 set_appearance_mode('system')
 set_default_color_theme('green')
+
+def addTransaction():
+    id = uuid.uuid1()
+    print(id.hex)
+    detail = 'Fuel Added'
+    print(detail)
+    credits = ''
+    debit = 100
+    
+    dict = {id.hex, detail, credits, debit}
+    print(dict)
+
+addTransaction()
 
 def transactionPage():
     transactionWindow = CTk()
@@ -39,5 +53,3 @@ def transactionPage():
     tv.heading(4, text='Credit')
     
     transactionWindow.mainloop()
-
-transactionPage()

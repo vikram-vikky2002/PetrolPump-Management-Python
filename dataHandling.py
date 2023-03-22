@@ -13,3 +13,11 @@ def getData(filename):
         print(val)
         return val
 
+def addTraction():
+    with open('transactions.pkl', 'ab') as file:
+        data = pk.load(file)
+        pk.dump(data, file)
+        print('Transaction added')
+        
+lst = []
+data = ('Fuel added', 20, )
