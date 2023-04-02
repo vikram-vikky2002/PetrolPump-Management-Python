@@ -3,6 +3,7 @@ from customtkinter import *
 from PIL import ImageTk
 import dataHandling
 import homePage
+import uuid
 
 set_appearance_mode('system')
 set_default_color_theme('green')
@@ -18,13 +19,14 @@ def fillLitreFunction(entry1, petrolWindow):
     inputVal = int(entry1.get())
     qty = int(inputVal)
     maxLimit = dataHandling.getData(r'data\petrolMax.pkl')
-    
+    id = uuid.uuid1()
     if((availPetrol+qty) <= maxLimit):
         messagebox.showinfo(message='Filling...')
         availPetrol = availPetrol + qty
-        price = qty*rate
+        price = round(qty*rate, 2)
         messagebox.showinfo(message=f'Pay : Rs.{price}\nQuantity Filled : {qty}Ltrs.')
         dataHandling.storeData(r'data\petrolQty.pkl', availPetrol)
+        dataHandling.addTraction([[f'{id.hex}','Petrol Filled', '', f'{price}']])
         goBack(petrolWindow)
         
     else:

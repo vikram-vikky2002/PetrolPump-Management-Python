@@ -1,4 +1,6 @@
 import pickle as pk
+import csv
+
 
 def storeData(filename, data):
     with open(filename, 'wb') as file:
@@ -13,11 +15,9 @@ def getData(filename):
         print(val)
         return val
 
-def addTraction():
-    with open('transactions.pkl', 'ab') as file:
-        data = pk.load(file)
-        pk.dump(data, file)
-        print('Transaction added')
+def addTraction(data):
+    with open(r'data\transactions.csv', 'a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(data)
+        print('Data Added...')
         
-lst = []
-data = ('Fuel added', 20, )
