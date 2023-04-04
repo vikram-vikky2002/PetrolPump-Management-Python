@@ -3,8 +3,14 @@ from customtkinter import *
 from PIL import ImageTk
 import dataHandling
 import fillPetrol, fillDiesel
+import adminPage
+
 set_appearance_mode('system')
 set_default_color_theme('green')
+
+def goBack(fillWindow):
+    fillWindow.destroy()
+    adminPage.admin()
 
 def petrol(fillWindow):
     fillWindow.destroy()
@@ -40,7 +46,7 @@ def fillPage():
     Petrol = CTkButton(master=frame, text='Petrol', font=('Arial Rounded MT Bold', 18), width=162, height=30, command= lambda: petrol(fillWindow))
     Petrol.pack(pady=20, padx=30, side= LEFT)
 
-    diesel = CTkButton(master=frame, text='Diesel', font=('Arial Rounded MT Bold', 18), width=162, height=30, command= lambda: petrol(fillWindow))
-    diesel.pack(pady=20, padx=30, side= RIGHT)
+    Diesel = CTkButton(master=frame, text='Diesel', font=('Arial Rounded MT Bold', 18), width=162, height=30, command= lambda: diesel(fillWindow))
+    Diesel.pack(pady=20, padx=30, side= RIGHT)
     
     fillWindow.mainloop()

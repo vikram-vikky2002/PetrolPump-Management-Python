@@ -3,6 +3,7 @@ from customtkinter import *
 from PIL import ImageTk
 import dataHandling
 import homePage
+import uuid
 
 set_appearance_mode('system')
 set_default_color_theme('green')
@@ -11,12 +12,12 @@ def goBack(dieselWindow):
     dieselWindow.destroy()
     homePage.HomePage()
     
-
 def fillLitreFunction(entry1, dieselWindow):
     availdiesel = dataHandling.getData(r'data\dieselQty.pkl')
     rate = dataHandling.getData(r'data\dieselPrice.pkl')
     inputVal = int(entry1.get())
     qty = int(inputVal)
+    id = uuid.uuid1()
     maxLimit = dataHandling.getData(r'data\dieselMax.pkl')
     
     if((availdiesel+qty) <= maxLimit):
@@ -25,6 +26,7 @@ def fillLitreFunction(entry1, dieselWindow):
         price = qty*rate
         messagebox.showinfo(message=f'Pay : Rs.{price}\nQuantity Filled : {qty}Ltrs.')
         dataHandling.storeData(r'data\dieselQty.pkl', availdiesel)
+        dataHandling.addTraction([[f'{id.hex}','Diesel Filled', '', f'{price}']])
         goBack(dieselWindow)
         
     else:

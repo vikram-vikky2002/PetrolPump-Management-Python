@@ -38,7 +38,7 @@ def HomePage():
     filling = CTkButton(master=frame, text='Fill Fuel', font=('Arial Rounded MT Bold', 18), width=162, height=30, command=lambda : fillRedirect(hWin))
     filling.pack(pady=6, padx=10)
 
-    checkPrice = CTkButton(master=frame, text='Check Price', font=('Arial Rounded MT Bold', 18), width=162, height=30, command=priceCheck)
+    checkPrice = CTkButton(master=frame, text='Check Price', font=('Arial Rounded MT Bold', 18), width=162, height=30, command= lambda: priceCheck(hWin))
     checkPrice.pack(pady=6, padx=10)
 
     label = CTkLabel(master=frame, text='', font=('Impact', 26))

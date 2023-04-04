@@ -4,13 +4,17 @@ from tkinter import *
 from PIL import ImageTk
 import uuid
 import csv
+import adminPage
 
 set_appearance_mode('system')
 set_default_color_theme('green')
 
+def goBack(transactionWindow):
+    transactionWindow.destroy()
+    adminPage.admin()
 
 def transactionPage():
-    transactionWindow = CTk()
+    transactionWindow = CTkToplevel()
     transactionWindow.resizable(width= False, height= False)
     WW = 732
     WH = 450
@@ -36,6 +40,9 @@ def transactionPage():
     tv = ttk.Treeview(frm, columns=(1, 2, 3, 4), show='headings', height='20')
     tv.pack()
     
+    backButton = CTkButton(master=transactionWindow, text='<- Back', font=('Arial Rounded MT Bold', 16), width=18, height=2, command= lambda: goBack(transactionWindow))
+    backButton.place(x= 5, y=5)
+    
     file = open(r'data\transactions.csv')
     csvreader = csv.reader(file)
     r_set = [row for row in csvreader]
@@ -50,5 +57,3 @@ def transactionPage():
         tv.insert('', 'end', iid=v[0], values=v)
     
     transactionWindow.mainloop()
-
-transactionPage()

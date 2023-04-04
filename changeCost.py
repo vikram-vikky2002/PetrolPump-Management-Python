@@ -6,6 +6,11 @@ import dataHandling, adminPage
 set_appearance_mode('system')
 set_default_color_theme('green')
 
+
+def goBack(costWindow):
+    costWindow.destroy()
+    adminPage.admin()
+
 def updatePrice(entry1, entry2, costWindow):
     if(entry1.get() or entry2.get()):
         e1 = float(entry1.get())
@@ -67,5 +72,8 @@ def updateRate():
     
     button = CTkButton(master=frame, text='Update Price', command= lambda: updatePrice(entry1, entry2, costWindow))
     button.pack(pady=25, padx=10)
+    
+    backButton = CTkButton(master=costWindow, text='<- Back', font=('Arial Rounded MT Bold', 16), width=18, height=2, command= lambda: goBack(costWindow))
+    backButton.place(x= 5, y=5)
     
     costWindow.mainloop()

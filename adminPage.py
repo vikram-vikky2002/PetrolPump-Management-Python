@@ -2,6 +2,7 @@ from tkinter import Label
 from customtkinter import *
 from PIL import ImageTk
 import fill, changeCost
+import tranactionModule
 
 set_appearance_mode('system')
 set_default_color_theme('green')
@@ -10,10 +11,15 @@ def updateQty(adminWindow):
     adminWindow.destroy()
     fill.fillPage()
     
-
+    
 def updatePrice(adminWindow):
     adminWindow.destroy()
     changeCost.updateRate()
+    
+
+def transactions(adminWindow):
+    adminWindow.destroy()
+    tranactionModule.transactionPage()
 
 
 def admin():
@@ -43,7 +49,7 @@ def admin():
     filling = CTkButton(master=frame, text='Update  Quantity', font=('Arial Rounded MT Bold', 18), width=162, height=30, command= lambda: updateQty(adminWindow))
     filling.pack(pady=6, padx=10)
 
-    checkPrice = CTkButton(master=frame, text='Transactions', font=('Arial Rounded MT Bold', 18), width=162, height=30)
+    checkPrice = CTkButton(master=frame, text='Transactions', font=('Arial Rounded MT Bold', 18), width=162, height=30, command= lambda: transactions(adminWindow))
     checkPrice.pack(pady=6, padx=10)
 
     label = CTkLabel(master=frame, text='', font=('Impact', 26))
