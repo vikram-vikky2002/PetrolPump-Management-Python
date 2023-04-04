@@ -1,14 +1,18 @@
 from tkinter import Label
 from customtkinter import *
 from PIL import ImageTk
-import fill, checkPrice
+import customerFill, checkPrice, login
 
 set_appearance_mode('system')
 set_default_color_theme('green')
 
+def goBack(hWin):
+    hWin.destroy()
+    login.LoginPage()
+
 def fillRedirect(hWin):
     hWin.destroy()
-    fill.fillPage()
+    customerFill.fillPage()
     
 def priceCheck(hWin):
     hWin.destroy()
@@ -43,5 +47,8 @@ def HomePage():
 
     label = CTkLabel(master=frame, text='', font=('Impact', 26))
     label.pack(pady=2, padx=40)
+    
+    logoutButton = CTkButton(master=hWin, text='Logout', font=('Arial Rounded MT Bold', 16), width=18, height=2, command= lambda: goBack(hWin))
+    logoutButton.place(x= 650, y=10)
 
     hWin.mainloop()

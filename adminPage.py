@@ -1,11 +1,16 @@
 from tkinter import Label
 from customtkinter import *
 from PIL import ImageTk
-import fill, changeCost
+import fill, changeCost, login
 import tranactionModule
 
 set_appearance_mode('system')
 set_default_color_theme('green')
+
+
+def goBack(adminWindow):
+    adminWindow.destroy()
+    login.LoginPage()
 
 def updateQty(adminWindow):
     adminWindow.destroy()
@@ -26,7 +31,7 @@ def admin():
     adminWindow = CTkToplevel()
     adminWindow.resizable(width= False, height= False)
     WW = 732
-    WH = 488
+    WH = 450
     SW = adminWindow.winfo_screenwidth()
     SH = adminWindow.winfo_screenheight()
     x = SW/2 - WW/2
@@ -54,5 +59,8 @@ def admin():
 
     label = CTkLabel(master=frame, text='', font=('Impact', 26))
     label.pack(pady=2, padx=40)
+    
+    logoutButton = CTkButton(master=adminWindow, text='Logout', font=('Arial Rounded MT Bold', 16), width=18, height=2, command= lambda: goBack(adminWindow))
+    logoutButton.place(x= 650, y=10)
     
     adminWindow.mainloop()

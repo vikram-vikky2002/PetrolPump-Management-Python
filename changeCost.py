@@ -30,7 +30,7 @@ def updateRate():
     costWindow = CTkToplevel()
     costWindow.resizable(width= False, height= False)
     WW = 732
-    WH = 488
+    WH = 450
     SW = costWindow.winfo_screenwidth()
     SH = costWindow.winfo_screenheight()
     x = SW/2 - WW/2

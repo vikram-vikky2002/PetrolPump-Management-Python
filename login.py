@@ -37,7 +37,9 @@ def login(entry1, entry2, root):
         messagebox.showinfo(message='Username Not Found')
         
 def LoginPage():
-    root = CTk()
+    root1 = Tk()
+    root1.withdraw()
+    root = CTkToplevel()
     root.resizable(width= False, height= False)
     WW = 732
     WH = 450
@@ -68,62 +70,62 @@ def LoginPage():
 
     root.mainloop()
 
+def splashScreen():
+    root=Tk()
 
-root=Tk()
+    width_of_window = 427
+    height_of_window = 260
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    x_coordinate = (screen_width/2)-(width_of_window/2)
+    y_coordinate = (screen_height/2)-(height_of_window/2)
+    root.geometry("%dx%d+%d+%d" %(screen_width,screen_height,x_coordinate,y_coordinate))
+    root.overrideredirect(1)
 
-width_of_window = 427
-height_of_window = 260
-screen_width = root.winfo_screenwidth()
-screen_height = root.winfo_screenheight()
-x_coordinate = (screen_width/2)-(width_of_window/2)
-y_coordinate = (screen_height/2)-(height_of_window/2)
-root.geometry("%dx%d+%d+%d" %(screen_width,screen_height,x_coordinate,y_coordinate))
-root.overrideredirect(1)
+    Frame(root, width=570, height=250, bg='#272727').place(x=0,y=0)
 
-Frame(root, width=570, height=250, bg='#272727').place(x=0,y=0)
+    label1=Label(root, text='PETROL PUMP MANAGEMENT', fg='white', bg='#272727')
+    label1.configure(font=("Berlin Sans FB Demi", 22))  
+    label1.place(x=80,y=90)
 
-label1=Label(root, text='PETROL PUMP MANAGEMENT', fg='white', bg='#272727')
-label1.configure(font=("Berlin Sans FB Demi", 22))  
-label1.place(x=80,y=90)
+    label2=Label(root, text='Loading...', fg='white', bg='#272727')
+    label2.configure(font=("Calibri", 14, 'bold'))
+    label2.place(x=10,y=215)
 
-label2=Label(root, text='Loading...', fg='white', bg='#272727')
-label2.configure(font=("Calibri", 14, 'bold'))
-label2.place(x=10,y=215)
-
-image_a=ImageTk.PhotoImage(file='assets/c2.png')
-image_b=ImageTk.PhotoImage(file='assets/c1.png')
-
-
-for i in range(3):
-    l1=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=240, y=145)
-    l2=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=260, y=145)
-    l3=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=280, y=145)
-    l4=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=300, y=145)
-    root.update_idletasks()
-    time.sleep(0.2)
-
-    l1=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=240, y=145)
-    l2=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=260, y=145)
-    l3=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=280, y=145)
-    l4=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=300, y=145)
-    root.update_idletasks()
-    time.sleep(0.2)
-
-    l1=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=240, y=145)
-    l2=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=260, y=145)
-    l3=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=280, y=145)
-    l4=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=300, y=145)
-    root.update_idletasks()
-    time.sleep(0.2)
-
-    l1=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=240, y=145)
-    l2=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=260, y=145)
-    l3=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=280, y=145)
-    l4=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=300, y=145)
-    root.update_idletasks()
-    time.sleep(0.2)
+    image_a=ImageTk.PhotoImage(file='assets/c2.png')
+    image_b=ImageTk.PhotoImage(file='assets/c1.png')
 
 
-root.destroy()
-LoginPage()
-root.mainloop()
+    for i in range(3):
+        l1=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=240, y=145)
+        l2=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=260, y=145)
+        l3=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=280, y=145)
+        l4=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=300, y=145)
+        root.update_idletasks()
+        time.sleep(0.2)
+
+        l1=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=240, y=145)
+        l2=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=260, y=145)
+        l3=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=280, y=145)
+        l4=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=300, y=145)
+        root.update_idletasks()
+        time.sleep(0.2)
+
+        l1=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=240, y=145)
+        l2=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=260, y=145)
+        l3=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=280, y=145)
+        l4=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=300, y=145)
+        root.update_idletasks()
+        time.sleep(0.2)
+
+        l1=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=240, y=145)
+        l2=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=260, y=145)
+        l3=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=280, y=145)
+        l4=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=300, y=145)
+        root.update_idletasks()
+        time.sleep(0.2)
+
+
+    root.destroy()
+    LoginPage()
+    root.mainloop()

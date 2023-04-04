@@ -18,11 +18,10 @@ def fillLitreFunction(entry1, petrolWindow):
     rate = dataHandling.getData(r'data\petrolPrice.pkl')
     inputVal = int(entry1.get())
     qty = int(inputVal)
-    maxLimit = dataHandling.getData(r'data\petrolMax.pkl')
     id = uuid.uuid1()
-    if((availPetrol+qty) <= maxLimit):
+    if(qty< availPetrol):
         messagebox.showinfo(message='Filling...')
-        availPetrol = availPetrol + qty
+        availPetrol = availPetrol - qty
         price = round(qty*rate, 2)
         messagebox.showinfo(message=f'Pay : Rs.{price}\nQuantity Filled : {qty}Ltrs.')
         dataHandling.storeData(r'data\petrolQty.pkl', availPetrol)
@@ -30,7 +29,7 @@ def fillLitreFunction(entry1, petrolWindow):
         goBack(petrolWindow)
         
     else:
-        messagebox.showinfo(message='Fuel Capacity Overflow...')
+        messagebox.showinfo(message='Fuel Capacity Insufficient...')
         goBack(petrolWindow)
 
 
@@ -43,7 +42,7 @@ def PetrolPage():
     petrolWindow = CTkToplevel()
     petrolWindow.resizable(width= False, height= False)
     WW = 732
-    WH = 488
+    WH = 450
     SW = petrolWindow.winfo_screenwidth()
     SH = petrolWindow.winfo_screenheight()
     x = SW/2 - WW/2

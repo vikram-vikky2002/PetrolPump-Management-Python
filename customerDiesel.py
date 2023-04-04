@@ -20,9 +20,9 @@ def fillLitreFunction(entry1, dieselWindow):
     id = uuid.uuid1()
     maxLimit = dataHandling.getData(r'data\dieselMax.pkl')
     
-    if((availdiesel+qty) <= maxLimit):
+    if(qty< availdiesel):
         messagebox.showinfo(message='Filling...')
-        availdiesel = availdiesel + qty
+        availdiesel = availdiesel - qty
         price = qty*rate
         messagebox.showinfo(message=f'Pay : Rs.{price}\nQuantity Filled : {qty}Ltrs.')
         dataHandling.storeData(r'data\dieselQty.pkl', availdiesel)
@@ -30,7 +30,7 @@ def fillLitreFunction(entry1, dieselWindow):
         goBack(dieselWindow)
         
     else:
-        messagebox.showinfo(message='Fuel Capacity Overflow...')
+        messagebox.showinfo(message='Fuel Capacity Insufficient...')
         goBack(dieselWindow)
 
 
@@ -43,7 +43,7 @@ def dieselPage():
     dieselWindow = CTkToplevel()
     dieselWindow.resizable(width= False, height= False)
     WW = 732
-    WH = 488
+    WH = 450
     SW = dieselWindow.winfo_screenwidth()
     SH = dieselWindow.winfo_screenheight()
     x = SW/2 - WW/2

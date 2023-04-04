@@ -16,10 +16,10 @@ def CheckPrice():
     fillWindow = CTkToplevel()
     fillWindow.resizable(width= False, height= False)
     WW = 732
-    WH = 488
+    WH = 450
     SW = fillWindow.winfo_screenwidth()
     SH = fillWindow.winfo_screenheight()
-    x = SW/2 + 200
+    x = SW/2 - WW/2
     y = SH/2 - WH/2
     fillWindow.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
     # fillWindow.geometry('732x488+470+150')
