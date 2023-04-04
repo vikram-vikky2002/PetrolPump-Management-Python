@@ -1,6 +1,6 @@
 from tkinter import Label, messagebox
 from customtkinter import *
-from PIL import ImageTk
+from PIL import ImageTk, Image
 import dataHandling, adminPage
 
 set_appearance_mode('system')
@@ -38,7 +38,9 @@ def updateRate():
     costWindow.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
     costWindow.title('Petrol Pump Management')
 
-    bg = ImageTk.PhotoImage(file='assets/background3.jpg')
+    ic = Image.open('assets/background3.jpg')
+    res_img = ic.resize((910,605))
+    bg = ImageTk.PhotoImage(res_img)
     label1 = Label(costWindow, image = bg)
     label1.place(x = 0, y = 0)
 

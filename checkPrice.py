@@ -1,6 +1,6 @@
 from tkinter import *
 from customtkinter import *
-from PIL import ImageTk
+from PIL import ImageTk, Image
 import dataHandling
 import homePage
 
@@ -24,7 +24,9 @@ def CheckPrice():
     fillWindow.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
     fillWindow.title('Petrol Pump Management')
 
-    bg = ImageTk.PhotoImage(file='assets/background3.jpg')
+    ic = Image.open('assets/background3.jpg')
+    res_img = ic.resize((910,605))
+    bg = ImageTk.PhotoImage(res_img)
     label1 = Label(fillWindow, image = bg)
     label1.place(x = 0, y = 0)
 

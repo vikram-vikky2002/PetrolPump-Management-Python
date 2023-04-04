@@ -1,6 +1,6 @@
 from tkinter import *
 from customtkinter import *
-from PIL import ImageTk
+from PIL import ImageTk, Image
 
 set_appearance_mode('system')
 set_default_color_theme('green')
@@ -21,8 +21,12 @@ def CheckPrice():
     y = SH/2 - WH/2
     fillWindow.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
     # fillWindow.geometry('732x488+470+150')
+    icon = PhotoImage(file='assets/Shell_Logo_small.png')
+    fillWindow.iconphoto(False, icon)
 
-    bg = ImageTk.PhotoImage(file='assets/background.jpg')
+    ic = Image.open('assets/background3.jpg')
+    res_img = ic.resize((910,605))
+    bg = ImageTk.PhotoImage(res_img)
     label1 = Label(fillWindow, image = bg)
     label1.place(x = 0, y = 0)
 
