@@ -2,7 +2,7 @@ from tkinter import Label
 from customtkinter import *
 from PIL import ImageTk
 import dataHandling
-import fillPetrol, fillDiesel
+import customerPetrol, customerDiesel
 import adminPage
 
 set_appearance_mode('system')
@@ -14,24 +14,23 @@ def goBack(fillWindow):
 
 def petrol(fillWindow):
     fillWindow.destroy()
-    fillPetrol.PetrolPage()
+    customerPetrol.PetrolPage()
     
 def diesel(fillWindow):
     fillWindow.destroy()
-    fillDiesel.dieselPage()
+    customerDiesel.dieselPage()
     
 def fillPage():
 
     fillWindow = CTkToplevel()
     fillWindow.resizable(width= False, height= False)
     WW = 732
-    WH = 488
+    WH = 450
     SW = fillWindow.winfo_screenwidth()
     SH = fillWindow.winfo_screenheight()
     x = SW/2 - WW/2
     y = SH/2 - WH/2
     fillWindow.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
-
 
     bg = ImageTk.PhotoImage(file='assets/background.jpg')
     label1 = Label(fillWindow, image = bg)
