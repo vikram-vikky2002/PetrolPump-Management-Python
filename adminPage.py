@@ -37,6 +37,7 @@ def admin():
     x = SW/2 - WW/2
     y = SH/2 - WH/2
     adminWindow.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
+    adminWindow.title('Petrol Pump Management')
 
     bg = ImageTk.PhotoImage(file='assets/background.jpg')
     label1 = Label(adminWindow, image = bg)

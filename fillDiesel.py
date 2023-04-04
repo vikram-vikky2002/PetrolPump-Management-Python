@@ -49,7 +49,8 @@ def dieselPage():
     x = SW/2 - WW/2
     y = SH/2 - WH/2
     dieselWindow.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
-    # dieselWindow.geometry('732x488+470+150')
+    dieselWindow.title('Petrol Pump Management')
+    
 
     bg = ImageTk.PhotoImage(file='assets/background.jpg')
     label1 = Label(dieselWindow, image = bg)

@@ -48,6 +48,7 @@ def LoginPage():
     x = SW/2 - WW/2
     y = SH/2 - WH/2
     root.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
+    root.title('Petrol Pump Management')
 
     bg = ImageTk.PhotoImage(file='assets/background2_small.jpeg')
     label1 = Label(root, image = bg)

@@ -23,6 +23,7 @@ def transactionPage():
     x = SW/2 - WW/2
     y = SH/2 - WH/2
     transactionWindow.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
+    transactionWindow.title('Petrol Pump Management')
 
     bg = ImageTk.PhotoImage(file='assets/background2_small.jpeg')
     label1 = Label(transactionWindow, image = bg)

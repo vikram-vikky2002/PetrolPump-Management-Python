@@ -23,7 +23,7 @@ def fillLitreFunction(entry1, dieselWindow):
     if(qty< availdiesel):
         messagebox.showinfo(message='Filling...')
         availdiesel = availdiesel - qty
-        price = qty*rate
+        price = round(qty*rate, 2)
         messagebox.showinfo(message=f'Pay : Rs.{price}\nQuantity Filled : {qty}Ltrs.')
         dataHandling.storeData(r'data\dieselQty.pkl', availdiesel)
         dataHandling.addTraction([[f'{id.hex}','Diesel Filled', '', f'{price}']])
@@ -49,7 +49,7 @@ def dieselPage():
     x = SW/2 - WW/2
     y = SH/2 - WH/2
     dieselWindow.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
-    # dieselWindow.geometry('732x488+470+150')
+    dieselWindow.title('Petrol Pump Management')
 
     bg = ImageTk.PhotoImage(file='assets/background.jpg')
     label1 = Label(dieselWindow, image = bg)

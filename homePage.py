@@ -28,6 +28,7 @@ def HomePage():
     x = SW/2 - WW/2
     y = SH/2 - WH/2
     hWin.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
+    hWin.title('Petrol Pump Management')
 
     bg = ImageTk.PhotoImage(file='assets/background.jpg')
     label1 = Label(hWin, image = bg)

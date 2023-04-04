@@ -31,6 +31,7 @@ def fillPage():
     x = SW/2 - WW/2
     y = SH/2 - WH/2
     fillWindow.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
+    fillWindow.title('Petrol Pump Management')
 
     bg = ImageTk.PhotoImage(file='assets/background.jpg')
     label1 = Label(fillWindow, image = bg)

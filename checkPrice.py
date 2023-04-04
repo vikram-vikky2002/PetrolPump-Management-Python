@@ -22,9 +22,9 @@ def CheckPrice():
     x = SW/2 - WW/2
     y = SH/2 - WH/2
     fillWindow.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
-    # fillWindow.geometry('732x488+470+150')
+    fillWindow.title('Petrol Pump Management')
 
-    bg = ImageTk.PhotoImage(file='assets/background.jpg')
+    bg = ImageTk.PhotoImage(file='assets/background3.jpg')
     label1 = Label(fillWindow, image = bg)
     label1.place(x = 0, y = 0)
 

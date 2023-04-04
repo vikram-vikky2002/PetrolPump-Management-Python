@@ -49,7 +49,7 @@ def PetrolPage():
     x = SW/2 - WW/2
     y = SH/2 - WH/2
     petrolWindow.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
-    # petrolWindow.geometry('732x488+470+150')
+    petrolWindow.title('Petrol Pump Management')
 
     bg = ImageTk.PhotoImage(file='assets/background.jpg')
     label1 = Label(petrolWindow, image = bg)
