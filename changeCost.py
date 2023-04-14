@@ -6,10 +6,26 @@ import dataHandling, adminPage
 set_appearance_mode('system')
 set_default_color_theme('green')
 
+'''
+    goBack()
+    This function is used to go back to the admin page.
+    It will destroy the current window and open the admin page.
+
+'''
 
 def goBack(costWindow):
     costWindow.destroy()
     adminPage.admin()
+
+'''
+    updatePrice()
+    This function is used to update the price of petrol and diesel.
+    It will take the new price of petrol and diesel as input from the user.
+    It will store the new price in the petrolPrice.pkl and dieselPrice.pkl files.
+    It will also show a message box to confirm that the price has been updated.
+    It will destroy the current window and open the admin page.
+    
+'''
 
 def updatePrice(entry1, entry2, costWindow):
     if(entry1.get() or entry2.get()):
@@ -25,6 +41,17 @@ def updatePrice(entry1, entry2, costWindow):
     costWindow.destroy()
     adminPage.admin()
 
+'''
+    updateRate()
+    This function is used to create the update rate page.
+    It will show the current price of petrol and diesel.
+    It will also have a back button to go back to the admin page.
+    It will also have a button to update the price of petrol and diesel.
+    It will also have a entry to enter the new price of petrol and diesel.
+    It will also have a button to confirm the update.
+    It will destroy the current window and open the update rate page.
+    
+'''
 
 def updateRate():
     costWindow = CTkToplevel()

@@ -8,10 +8,23 @@ import uuid
 set_appearance_mode('system')
 set_default_color_theme('green')
 
+'''
+    goBack()
+    This function is used to go back to the admin page.
+    It will destroy the current window and open the admin page.
+    
+'''
 def goBack(dieselWindow):
     dieselWindow.destroy()
     adminPage.admin()
+'''
+    fillLitreFunction()
+    This function is used to fill the diesel.
+    It will take the input from the user and fill the diesel.
+    It will also show the price and the quantity filled.
+    It will also store the transaction in the transaction file.
     
+'''
 def fillLitreFunction(entry1, dieselWindow):
     availdiesel = dataHandling.getData(r'data\dieselQty.pkl')
     rate = dataHandling.getData(r'data\dieselPrice.pkl')
@@ -33,7 +46,15 @@ def fillLitreFunction(entry1, dieselWindow):
         messagebox.showinfo(message='Fuel Capacity Overflow...')
         goBack(dieselWindow)
 
-
+'''
+    dieselPage()
+    This class is used to create the diesel page.
+    It will show the current price and quantity of diesel.
+    It will also have a back button to go back to the admin page.
+    It will also have a button to fill the diesel.
+    It will also have a entry to enter the quantity of diesel to be filled.
+    
+'''
 def dieselPage():
     crPrice = dataHandling.getData(r'data\dieselPrice.pkl')
     crQty = dataHandling.getData(r'data\dieselQty.pkl')

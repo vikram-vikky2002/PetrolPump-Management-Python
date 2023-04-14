@@ -6,18 +6,43 @@ import customerFill, checkPrice, login
 set_appearance_mode('system')
 set_default_color_theme('green')
 
+'''
+    goBack()
+    This function is used to go back to the login page.
+    It will destroy the current window and open the login page.
+    
+'''
 def goBack(hWin):
     hWin.destroy()
     login.LoginPage()
 
+'''
+    fillRedirect()
+    This function is used to go to the fill page.
+    It will destroy the current window and open the fill page.
+    
+'''
 def fillRedirect(hWin):
     hWin.destroy()
     cf = customerFill.fillPage()
-    
+
+'''
+    priceCheck()
+    This function is used to go to the price check page.
+    It will destroy the current window and open the price check page.
+
+'''
 def priceCheck(hWin):
     hWin.destroy()
     checkPrice.CheckPrice()
-    
+
+'''
+    HomePage()
+    This function is used to show the home page.
+    It will show the home page and the buttons to go to the other pages.
+    It will also have a logout button to go back to the login page.
+
+'''    
 def HomePage():
     hWin = CTkToplevel()
     hWin.resizable(width= False, height= False)

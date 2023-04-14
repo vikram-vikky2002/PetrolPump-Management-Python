@@ -5,6 +5,12 @@ from tkinter import *
 from PIL import ImageTk
 import homePage, adminPage
 
+'''
+    These two lines are used to set the theme of the application.
+    The theme is set to green.
+    
+'''
+
 set_appearance_mode('system')
 set_default_color_theme('green')
 
@@ -13,6 +19,14 @@ cPw = '12345'
 adUn = 'Admin'
 adPw = 'Admin'
 
+'''
+    login()
+    This function is used to check the username and password entered by the user.
+    If the username and password is correct, it will open the home page.
+    If the username is correct but the password is wrong, it will show a message box.
+    If the username is wrong, it will show a message box.
+    
+'''
 
 def login(entry1, entry2, root):
     username = entry1.get()
@@ -35,42 +49,13 @@ def login(entry1, entry2, root):
     
     else:
         messagebox.showinfo(message='Username Not Found')
-        
-# def LoginPage():
-#     root1 = Tk()
-#     root1.withdraw()
-#     root = CTkToplevel()
-#     root.resizable(width= False, height= False)
-#     WW = 732
-#     WH = 450
-#     SW = root.winfo_screenwidth()
-#     SH = root.winfo_screenheight()
-#     x = SW/2 - WW/2
-#     y = SH/2 - WH/2
-#     root.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
-#     root.title('Petrol Pump Management')
 
-#     bg = ImageTk.PhotoImage(file='assets/background2_small.jpeg')
-#     label1 = Label(root, image = bg)
-#     label1.place(x = 0, y = 0)
-
-#     frame = CTkFrame(master = root, height=200, width=6000)
-#     frame.pack(pady=60, padx=60, expand=True)
-
-#     label = CTkLabel(master=frame, text='User Login', font=('Impact', 35, 'bold'))
-#     label.pack(pady=25, padx=40)
-
-#     entry1 = CTkEntry(master=frame, placeholder_text='Username')
-#     entry1.pack(pady=12, padx=10)
-
-#     entry2 = CTkEntry(master=frame, placeholder_text='Password', show='*')
-#     entry2.pack(pady=12, padx=10)
-
-#     button = CTkButton(master=frame, text='Login', command= lambda: login(entry1, entry2, root))
-#     button.pack(pady=25, padx=10)
-
-#     root.mainloop()
-
+'''
+    splashScreen()
+    This function is used to show the splash screen of the application.
+    It will show the application name and a loading message.
+    
+'''
 class splashScreen:
     def __init__(self):
         root=Tk()
@@ -130,7 +115,14 @@ class splashScreen:
         root.destroy()
         LoginPage()
         root.mainloop()
-        
+
+'''
+    LoginPage()
+    This function is used to create the login page of the application.
+    It will show the username and password entry boxes.
+    It will also show the login button.
+
+'''
 def LoginPage():
     root1 = Tk()
     root1.withdraw()

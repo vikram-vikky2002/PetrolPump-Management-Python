@@ -8,9 +8,25 @@ import uuid
 set_appearance_mode('system')
 set_default_color_theme('green')
 
+'''
+    goBack()
+    This function is used to go back to the home page.
+    It will destroy the current window and open the home page.
+
+'''
+
 def goBack(dieselWindow):
     dieselWindow.destroy()
     homePage.HomePage()
+    
+'''
+    fillLitreFunction()
+    This function is used to fill the diesel.
+    It will check if the quantity of diesel entered by the user is less than the available quantity.
+    If the quantity is less than the available quantity, it will show a message box.
+    If the quantity is more than the available quantity, it will show a message box.
+    
+'''
     
 def fillLitreFunction(entry1, dieselWindow):
     availdiesel = dataHandling.getData(r'data\dieselQty.pkl')
@@ -33,6 +49,15 @@ def fillLitreFunction(entry1, dieselWindow):
         messagebox.showinfo(message='Fuel Capacity Insufficient...')
         goBack(dieselWindow)
 
+'''
+    dieselPage()
+    This class is used to create the diesel page.
+    It will show the current price and quantity of diesel.
+    It will also have a back button to go back to the homePage page.
+    It will also have a button to fill the diesel.
+    It will also have a entry to enter the quantity of diesel to be filled.
+
+'''
 
 def dieselPage():
     crPrice = dataHandling.getData(r'data\dieselPrice.pkl')

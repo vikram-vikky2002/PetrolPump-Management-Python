@@ -1,25 +1,48 @@
 from tkinter import Label
 from customtkinter import *
 from PIL import ImageTk
-import dataHandling
 import fillPetrol, fillDiesel
 import adminPage
 
 set_appearance_mode('system')
 set_default_color_theme('green')
 
+'''
+    goBack()
+    This function is used to go back to the admin page.
+    It will destroy the current window and open the admin page.
+    
+'''
+
 def goBack(fillWindow):
     fillWindow.destroy()
     adminPage.admin()
-
+'''
+    petrol()
+    This function is used to go to the petrol page.
+    It will destroy the current window and open the petrol page.
+    
+'''
 def petrol(fillWindow):
     fillWindow.destroy()
     fillPetrol.PetrolPage()
+
+'''
+    diesel()
+    This function is used to go to the diesel page.
+    It will destroy the current window and open the diesel page.
     
+'''
 def diesel(fillWindow):
     fillWindow.destroy()
     fillDiesel.dieselPage()
+
+'''
+    fillPage()
+    This function is used to show the fill page.
+    It will show the fill page and the buttons to go to the other pages.
     
+'''
 def fillPage():
 
     fillWindow = CTkToplevel()

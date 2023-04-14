@@ -7,10 +7,28 @@ import homePage
 set_appearance_mode('system')
 set_default_color_theme('green')
 
+'''
+    goBack()
+    This function is used to go back to the home page.
+    It will destroy the current window and open the home page.
+
+'''
+
 def goBack(fillWindow):
     fillWindow.destroy()
     homePage.HomePage()
 
+'''
+    CheckPrice()
+    This function is used to show the current price of petrol and diesel.
+    It will show the current price of petrol and diesel.
+    It will also have a back button to go back to the home page.
+    It will also have a button to update the price of petrol and diesel.
+    It will also have a entry to enter the new price of petrol and diesel.
+    It will also have a button to confirm the update.
+    It will destroy the current window and open the update rate page.
+        
+'''
 
 def CheckPrice():
     fillWindow = CTkToplevel()

@@ -1,14 +1,44 @@
 from tkinter import Label
 from customtkinter import *
 from PIL import ImageTk
-import dataHandling
 import customerPetrol, customerDiesel
-import adminPage
+import homePage
 
 set_appearance_mode('system')
 set_default_color_theme('green')
 
-class fillPage:     
+'''
+    fillPageFunction class
+    This class is used to create the fill page.
+    It will show the fuel type options.
+    It will also have a back button to go back to the homePage page.
+
+'''
+class fillPageFuction:
+    def __init__(self):
+        pass
+    
+    def goBack(self, fillWindow):
+        fillWindow.destroy()
+        homePage.HomePage()
+
+    def petrol(self, fillWindow):
+        fillWindow.destroy()
+        customerPetrol.PetrolPage()
+        
+    def diesel(self, fillWindow):
+        fillWindow.destroy()
+        customerDiesel.dieselPage()    
+    
+
+'''
+    fillPage class inherited from fillPageFunction class
+    This class is used to create the fill page.
+    It will show the fuel type options.
+    It will also have a back button to go back to the admin page.
+
+'''
+class fillPage(fillPageFuction):     
     def __init__(self):
         fillWindow = CTkToplevel()
         fillWindow.resizable(width= False, height= False)
@@ -40,14 +70,4 @@ class fillPage:
         fillWindow.mainloop()
 
 
-    def goBack(self, fillWindow):
-        fillWindow.destroy()
-        adminPage.admin()
-
-    def petrol(self, fillWindow):
-        fillWindow.destroy()
-        customerPetrol.PetrolPage()
-        
-    def diesel(self, fillWindow):
-        fillWindow.destroy()
-        customerDiesel.dieselPage()
+    

@@ -1,6 +1,13 @@
+'''
+    This file is used to store and retrieve data from the file
+    It will store the data in the file in the form of pickle
+    It will retrieve the data from the file in the form of pickle
+    It will also add the data to the transactions.csv file
+
+'''
+
 import pickle as pk
 import csv
-
 
 def storeData(filename, data):
     with open(filename, 'wb') as file:

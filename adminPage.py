@@ -7,26 +7,53 @@ import tranactionModule
 set_appearance_mode('system')
 set_default_color_theme('green')
 
-
+'''
+    goBack()
+    This function is used to go back to the login page.
+    It will destroy the current window and open the login page.
+    
+'''
 def goBack(adminWindow):
     adminWindow.destroy()
     login.LoginPage()
 
+'''
+    updateQty()
+    This function is used to go to the update quantity page.
+    It will destroy the current window and open the update quantity page.
+
+'''
 def updateQty(adminWindow):
     adminWindow.destroy()
     fill.fillPage()
     
-    
+'''
+    updatePrice()
+    This function is used to go to the update price page.
+    It will destroy the current window and open the update price page.
+
+'''    
 def updatePrice(adminWindow):
     adminWindow.destroy()
     changeCost.updateRate()
     
-
+'''
+    transactions()
+    This function is used to go to the transactions page.
+    It will destroy the current window and open the transactions page.
+    
+'''
 def transactions(adminWindow):
     adminWindow.destroy()
     tranactionModule.transactionPage()
 
-
+'''
+    admin()
+    This function is used to show the admin menu.
+    It will show the admin menu and the buttons to go to the other pages.
+    It will also have a logout button to go back to the login page.
+    
+'''
 def admin():
     try:
         adminWindow = CTkToplevel()

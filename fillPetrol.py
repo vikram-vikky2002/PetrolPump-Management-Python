@@ -8,11 +8,24 @@ import uuid
 set_appearance_mode('system')
 set_default_color_theme('green')
 
+'''
+    goBack()
+    This function is used to go back to the admin page.
+    It will destroy the current window and open the admin page.
+    
+'''
 def goBack(petrolWindow):
     petrolWindow.destroy()
     adminPage.admin()
     
-
+'''
+    fillLitreFunction()
+    This function is used to fill the petrol.
+    It will take the input from the entry box and fill the petrol.
+    It will also show the price and the quantity filled.
+    It will also store the transaction in the transaction file.
+    
+'''
 def fillLitreFunction(entry1, petrolWindow):
     availPetrol = dataHandling.getData(r'data\petrolQty.pkl')
     rate = dataHandling.getData(r'data\petrolPrice.pkl')
@@ -33,7 +46,15 @@ def fillLitreFunction(entry1, petrolWindow):
         messagebox.showinfo(message='Fuel Capacity Overflow...')
         goBack(petrolWindow)
 
-
+'''
+    petrolPage()
+    This class is used to create the petrol page.
+    It will show the current price and quantity of petrol.
+    It will also have a back button to go back to the admin page.
+    It will also have a button to fill the petrol.
+    It will also have a entry to enter the quantity of petrol to be filled.
+    
+'''
 def PetrolPage():
     crPrice = dataHandling.getData(r'data\petrolPrice.pkl')
     crQty = dataHandling.getData(r'data\petrolQty.pkl')
