@@ -1,2 +1,2 @@
 import login
-login.splashScreen()
+start = login.splashScreen()

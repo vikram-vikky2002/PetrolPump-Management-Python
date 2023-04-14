@@ -12,7 +12,7 @@ def goBack(hWin):
 
 def fillRedirect(hWin):
     hWin.destroy()
-    customerFill.fillPage()
+    cf = customerFill.fillPage()
     
 def priceCheck(hWin):
     hWin.destroy()

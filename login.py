@@ -36,6 +36,101 @@ def login(entry1, entry2, root):
     else:
         messagebox.showinfo(message='Username Not Found')
         
+# def LoginPage():
+#     root1 = Tk()
+#     root1.withdraw()
+#     root = CTkToplevel()
+#     root.resizable(width= False, height= False)
+#     WW = 732
+#     WH = 450
+#     SW = root.winfo_screenwidth()
+#     SH = root.winfo_screenheight()
+#     x = SW/2 - WW/2
+#     y = SH/2 - WH/2
+#     root.geometry('%dx%d+%d+%d' %(WW, WH, x, y))
+#     root.title('Petrol Pump Management')
+
+#     bg = ImageTk.PhotoImage(file='assets/background2_small.jpeg')
+#     label1 = Label(root, image = bg)
+#     label1.place(x = 0, y = 0)
+
+#     frame = CTkFrame(master = root, height=200, width=6000)
+#     frame.pack(pady=60, padx=60, expand=True)
+
+#     label = CTkLabel(master=frame, text='User Login', font=('Impact', 35, 'bold'))
+#     label.pack(pady=25, padx=40)
+
+#     entry1 = CTkEntry(master=frame, placeholder_text='Username')
+#     entry1.pack(pady=12, padx=10)
+
+#     entry2 = CTkEntry(master=frame, placeholder_text='Password', show='*')
+#     entry2.pack(pady=12, padx=10)
+
+#     button = CTkButton(master=frame, text='Login', command= lambda: login(entry1, entry2, root))
+#     button.pack(pady=25, padx=10)
+
+#     root.mainloop()
+
+class splashScreen:
+    def __init__(self):
+        root=Tk()
+        width_of_window = 450
+        height_of_window = 260
+        screen_width = root.winfo_screenwidth()
+        screen_height = root.winfo_screenheight()
+        x_coordinate = (screen_width/2)-(width_of_window/2)
+        y_coordinate = (screen_height/2)-(height_of_window/2)
+        root.geometry("%dx%d+%d+%d" %(screen_width,screen_height,x_coordinate,y_coordinate))
+        root.overrideredirect(1)
+
+        Frame(root, width=570, height=250, bg='#272727').place(x=0,y=0)
+
+        label1=Label(root, text='PETROL PUMP MANAGEMENT', fg='white', bg='#272727')
+        label1.configure(font=("Berlin Sans FB Demi", 22))  
+        label1.place(x=50,y=90)
+
+        label2=Label(root, text='Loading...', fg='white', bg='#272727')
+        label2.configure(font=("Calibri", 14, 'bold'))
+        label2.place(x=10,y=215)
+
+        image_a=ImageTk.PhotoImage(file='assets/c2.png')
+        image_b=ImageTk.PhotoImage(file='assets/c1.png')
+
+
+        for i in range(3):
+            l1=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=240, y=145)
+            l2=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=260, y=145)
+            l3=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=280, y=145)
+            l4=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=300, y=145)
+            root.update_idletasks()
+            time.sleep(0.2)
+
+            l1=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=240, y=145)
+            l2=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=260, y=145)
+            l3=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=280, y=145)
+            l4=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=300, y=145)
+            root.update_idletasks()
+            time.sleep(0.2)
+
+            l1=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=240, y=145)
+            l2=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=260, y=145)
+            l3=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=280, y=145)
+            l4=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=300, y=145)
+            root.update_idletasks()
+            time.sleep(0.2)
+
+            l1=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=240, y=145)
+            l2=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=260, y=145)
+            l3=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=280, y=145)
+            l4=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=300, y=145)
+            root.update_idletasks()
+            time.sleep(0.2)
+
+
+        root.destroy()
+        LoginPage()
+        root.mainloop()
+        
 def LoginPage():
     root1 = Tk()
     root1.withdraw()
@@ -69,64 +164,4 @@ def LoginPage():
     button = CTkButton(master=frame, text='Login', command= lambda: login(entry1, entry2, root))
     button.pack(pady=25, padx=10)
 
-    root.mainloop()
-
-def splashScreen():
-    root=Tk()
-
-    width_of_window = 427
-    height_of_window = 260
-    screen_width = root.winfo_screenwidth()
-    screen_height = root.winfo_screenheight()
-    x_coordinate = (screen_width/2)-(width_of_window/2)
-    y_coordinate = (screen_height/2)-(height_of_window/2)
-    root.geometry("%dx%d+%d+%d" %(screen_width,screen_height,x_coordinate,y_coordinate))
-    root.overrideredirect(1)
-
-    Frame(root, width=570, height=250, bg='#272727').place(x=0,y=0)
-
-    label1=Label(root, text='PETROL PUMP MANAGEMENT', fg='white', bg='#272727')
-    label1.configure(font=("Berlin Sans FB Demi", 22))  
-    label1.place(x=80,y=90)
-
-    label2=Label(root, text='Loading...', fg='white', bg='#272727')
-    label2.configure(font=("Calibri", 14, 'bold'))
-    label2.place(x=10,y=215)
-
-    image_a=ImageTk.PhotoImage(file='assets/c2.png')
-    image_b=ImageTk.PhotoImage(file='assets/c1.png')
-
-
-    for i in range(3):
-        l1=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=240, y=145)
-        l2=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=260, y=145)
-        l3=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=280, y=145)
-        l4=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=300, y=145)
-        root.update_idletasks()
-        time.sleep(0.2)
-
-        l1=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=240, y=145)
-        l2=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=260, y=145)
-        l3=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=280, y=145)
-        l4=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=300, y=145)
-        root.update_idletasks()
-        time.sleep(0.2)
-
-        l1=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=240, y=145)
-        l2=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=260, y=145)
-        l3=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=280, y=145)
-        l4=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=300, y=145)
-        root.update_idletasks()
-        time.sleep(0.2)
-
-        l1=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=240, y=145)
-        l2=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=260, y=145)
-        l3=Label(root, image=image_b, border=0, relief=SUNKEN).place(x=280, y=145)
-        l4=Label(root, image=image_a, border=0, relief=SUNKEN).place(x=300, y=145)
-        root.update_idletasks()
-        time.sleep(0.2)
-
-
-    root.destroy()
-    LoginPage()
     root.mainloop()

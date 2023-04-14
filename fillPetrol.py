@@ -2,7 +2,7 @@ from tkinter import Label, messagebox
 from customtkinter import *
 from PIL import ImageTk
 import dataHandling
-import homePage
+import adminPage
 import uuid
 
 set_appearance_mode('system')
@@ -10,7 +10,7 @@ set_default_color_theme('green')
 
 def goBack(petrolWindow):
     petrolWindow.destroy()
-    homePage.HomePage()
+    adminPage.admin()
     
 
 def fillLitreFunction(entry1, petrolWindow):
@@ -26,7 +26,7 @@ def fillLitreFunction(entry1, petrolWindow):
         price = round(qty*rate, 2)
         messagebox.showinfo(message=f'Pay : Rs.{price}\nQuantity Filled : {qty}Ltrs.')
         dataHandling.storeData(r'data\petrolQty.pkl', availPetrol)
-        dataHandling.addTraction([[f'{id.hex}','Petrol Filled', '', f'{price}']])
+        dataHandling.addTraction([[f'{id.hex}','Petrol Filled', f'{price}', '']])
         goBack(petrolWindow)
         
     else:
