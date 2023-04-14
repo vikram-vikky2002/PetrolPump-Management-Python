@@ -8,6 +8,6 @@ The software provides a range of features to manage the daily operations of a pe
 
 2. **Inventory management :** The software helps the user keep track of fuel inventory, including the fuel type, quantity, and price. It provides alerts for low inventory levels, allowing the user to order new stock in advance.
 
-3. **Sales management :** The system allows the user to record fuel sales and generate tranaction history
+3. **Sales management :** The system allows the user to record fuel sales and generate transaction history
 
 Overall, the Petrol Pump Management System developed using Python is a user-friendly, feature-rich software solution that simplifies and automates the daily operations of a petrol pump. It helps the user to streamline their operations, save time and effort, and make informed decisions based on accurate data.

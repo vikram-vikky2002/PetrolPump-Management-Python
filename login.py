@@ -51,7 +51,7 @@ def login(entry1, entry2, root):
         messagebox.showinfo(message='Username Not Found')
 
 '''
-    splashScreen()
+    splashScreen
     This function is used to show the splash screen of the application.
     It will show the application name and a loading message.
     
