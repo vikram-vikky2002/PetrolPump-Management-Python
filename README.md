@@ -11,3 +11,10 @@ The software provides a range of features to manage the daily operations of a pe
 3. **Sales management :** The system allows the user to record fuel sales and generate transaction history
 
 Overall, the Petrol Pump Management System developed using Python is a user-friendly, feature-rich software solution that simplifies and automates the daily operations of a petrol pump. It helps the user to streamline their operations, save time and effort, and make informed decisions based on accurate data.
+
+# Sample Screenshots
+
+![alt text](https://github.com/vikram-vikky2002/PetrolPump-Management-Python/blob/main/supporting%20image/Screenshot%202023-04-15%20001611.png?raw=true)
+![alt text](https://github.com/vikram-vikky2002/PetrolPump-Management-Python/blob/main/supporting%20image/Screenshot%202023-04-15%20001838.png?raw=true)
+![alt text](https://github.com/vikram-vikky2002/PetrolPump-Management-Python/blob/main/supporting%20image/Screenshot%202023-04-15%20004517.png?raw=true)
+
